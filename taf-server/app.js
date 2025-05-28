@@ -34,6 +34,11 @@ async function calcularPontuacao(alunoId, exercicioId, valor) {
 
 // Rotas
 
+//Healthcheck
+app.get('/', async (req, res) => {
+  res.status(200).json({ "message": "success" })
+})
+
 //Registra um novo aluno
 app.post('/alunos', async (req, res) => {
   const { nome, idade, sexo } = req.body
